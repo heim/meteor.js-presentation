@@ -1,0 +1,27 @@
+<head>
+  <title>todos</title>
+</head>
+
+<body>
+  <div class="container">
+  {{> todos}}
+</div>
+</body>
+
+<template name="todos">
+<h1>Todos</h1>
+<form>
+  <input id="task" type="text" placeholder="Add a task" /><br />
+  <input id="add" type="submit" value="Add" />
+</form>
+<h2>Tasks</h2>
+<ul>
+  {{#each tasks}}
+  <li>
+  {{task}}
+  <input type="checkbox" {{#if done}} checked {{/if}} /> 
+  <button class="btn btn-mini btn-danger">Delete</button>
+  </li>
+  {{/each}}
+</ul>
+</template>
